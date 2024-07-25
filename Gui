@@ -1,0 +1,37 @@
+-- LocalScript trong StarterGui
+
+-- Tạo ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Tạo TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Parent = screenGui
+textLabel.Size = UDim2.new(0.3, 0, 0.1, 0) -- Kích thước của TextLabel
+textLabel.Position = UDim2.new(0.35, 0, 0.45, 0) -- Vị trí giữa màn hình
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "Welcome to RHub"
+textLabel.TextColor3 = Color3.new(1, 1, 1) -- Màu trắng
+textLabel.Font = Enum.Font.SourceSans
+textLabel.TextScaled = true
+
+-- Tạo hoạt ảnh
+local TweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(
+    1, -- Thời gian thực hiện hoạt ảnh
+    Enum.EasingStyle.Bounce, -- Kiểu easing
+    Enum.EasingDirection.Out, 
+    0, 
+    false, 
+    0 
+)
+
+local goal = {}
+goal.TextColor3 = Color3.fromRGB(255, 0, 0) -- Chuyển sang màu đỏ
+
+local tween = TweenService:Create(textLabel, tweenInfo, goal)
+tween:Play()
+
+-- Tự động ẩn sau 5 giây
+wait(5)
+screenGui:Destroy()￼Enter
