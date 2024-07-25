@@ -35,4 +35,4 @@ tween:Play()
 -- Tự động ẩn sau 5 giây
 wait(5)
 screenGui:Destroy()
-
+.
